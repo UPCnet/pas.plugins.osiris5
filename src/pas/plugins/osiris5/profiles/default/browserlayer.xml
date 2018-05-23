@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layers>
+  <layer
+      name="pas.plugins.osiris5"
+      interface="pas.plugins.osiris5.interfaces.IPasPluginsOsiris5Layer"
+      />
+</layers>
