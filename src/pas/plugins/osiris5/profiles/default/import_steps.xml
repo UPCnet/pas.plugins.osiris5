@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <import-steps>
- <import-step id="pas.plugins.osiris.setup"
-              handler="pas.plugins.osiris.setuphandlers.setupPlugin"
+ <import-step id="pas.plugins.osiris5.setup"
+              handler="pas.plugins.osiris5.setuphandlers.setupPlugin"
               title="Setup Osiris Plugin"
               version="20130814">
   <dependency step="plone-final"/>

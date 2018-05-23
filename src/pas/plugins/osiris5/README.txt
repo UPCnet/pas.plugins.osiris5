@@ -1,4 +1,4 @@
-Tests for pas.plugins.osiris
+Tests for pas.plugins.osiris5
 
 test setup
 ----------
@@ -18,7 +18,7 @@ Plugin setup
     >>> form = browser.getForm(index=0)
     >>> select = form.getControl(name=':action')
 
-pas.plugins.osiris should be in the list of installable plugins:
+pas.plugins.osiris5 should be in the list of installable plugins:
 
     >>> 'Osiris Helper' in select.displayOptions
     True
@@ -29,11 +29,11 @@ and we can select it:
     >>> select.displayValue
     ['Osiris Helper']
     >>> select.value
-    ['manage_addProduct/pas.plugins.osiris/manage_add_osiris_helper_form']
+    ['manage_addProduct/pas.plugins.osiris5/manage_add_osiris_helper_form']
 
 we add 'Osiris Helper' to acl_users:
 
-    >>> from pas.plugins.osiris.plugin import OsirisHelper
+    >>> from pas.plugins.osiris5.plugin import OsirisHelper
     >>> myhelper = OsirisHelper('myplugin', 'Osiris Helper')
     >>> self.portal.acl_users['myplugin'] = myhelper
 
@@ -41,4 +41,3 @@ and so on. Continue your tests here
 
     >>> 'ALL OK'
     'ALL OK'
-

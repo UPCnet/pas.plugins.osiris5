@@ -1,13 +1,13 @@
-from pas.plugins.osiris.plugin import OsirisHelper
+from pas.plugins.osiris5.plugin import OsirisHelper
 
-TITLE = 'Osiris plugin (pas.plugins.osiris)'
+TITLE = 'Osiris plugin (pas.plugins.osiris5)'
 
 
 def isNotThisProfile(context):
     return context.readDataFile("osiris_marker.txt") is None
 
 
-def _addPlugin(pas, pluginid='pasosiris'):
+def _addPlugin(pas, pluginid='pasosiris5'):
     installed = pas.objectIds()
     if pluginid in installed:
         return TITLE + " already installed."

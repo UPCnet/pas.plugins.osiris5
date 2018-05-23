@@ -10,7 +10,7 @@ from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import PloneSite
 ptc.setupPloneSite()
 
-import pas.plugins.osiris
+import pas.plugins.osiris5
 
 class TestCase(ptc.PloneTestCase):
     class layer(PloneSite):
@@ -18,7 +18,7 @@ class TestCase(ptc.PloneTestCase):
         def setUp(cls):
             fiveconfigure.debug_mode = True
             zcml.load_config('configure.zcml',
-                             pas.plugins.osiris)
+                             pas.plugins.osiris5)
             fiveconfigure.debug_mode = False
 
         @classmethod
@@ -30,11 +30,10 @@ def test_suite():
     return unittest.TestSuite([
 
         ztc.FunctionalDocFileSuite(
-            'README.txt', package='pas.plugins.osiris',
+            'README.txt', package='pas.plugins.osiris5',
             test_class=TestCase),
 
         ])
 
 if __name__ == '__main__':
     unittest.main(defaultTest='test_suite')
-

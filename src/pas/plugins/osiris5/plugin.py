@@ -11,7 +11,7 @@ from Products.PluggableAuthService.interfaces.plugins import IAuthenticationPlug
 
 from plone.registry.interfaces import IRegistry
 
-from pas.plugins.osiris.interface import IOsirisHelper
+from pas.plugins.osiris5.interface import IOsirisHelper
 from mrs5.max.browser.controlpanel import IMAXUISettings
 import requests
 
@@ -59,7 +59,6 @@ class OsirisHelper(BasePlugin, Cacheable):
     def authenticateCredentials(self, credentials):
         if credentials['extractor'] != self.getId():
             return None
-
         login = credentials['login']
         return (login, login)
 
