@@ -1,6 +1,7 @@
-# -*- coding: utf-8 -*-
-"""Init and utils."""
-from zope.i18nmessageid import MessageFactory
+import install
 
+install.register_osiris_plugin()
 
-_ = MessageFactory('pas.plugins.osiris5')
+def initialize(context):
+    """Initializer called when used as a Zope 2 product."""
+    install.register_osiris_plugin_class(context)

@@ -15,7 +15,7 @@ long_description = '\n\n'.join([
 setup(
     name='pas.plugins.osiris5',
     version='1.0a1',
-    description="An add-on for Plone",
+    description="Osiris oauth server PAS plugin.",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
@@ -43,6 +43,7 @@ setup(
         'plone.api',
         'Products.GenericSetup>=1.8.2',
         'setuptools',
+        'requests',
         'z3c.jbot',
     ],
     extras_require={
@@ -56,6 +57,7 @@ setup(
             'plone.app.robotframework[debug]',
         ],
     },
+    test_suite='pas.plugins.osiris5.tests.test_docs.test_suite',
     entry_points="""
     [z3c.autoinclude.plugin]
     target = plone
