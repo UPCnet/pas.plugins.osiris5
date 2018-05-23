@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='pas.plugins.osiris5',
-    version='1.0a1',
+    version='1.0',
     description="Osiris5 oauth server PAS plugin.",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
