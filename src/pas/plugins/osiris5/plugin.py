@@ -54,6 +54,17 @@ class OsirisHelper(BasePlugin, Cacheable):
             if req.status_code == 200:
                 creds['login'] = username
 
+        # Login comunitats con username y oauth_token
+        if request.form['__ac_name'] and request.form['__ac_password']:
+            username = request.form['__ac_name']
+            token = request.form['__ac_password']
+            scope = 'widgetcli'
+
+            data = dict(username=username, access_token=token, scope=scope)
+            req = requests.post("{}/checktoken".format(self.oauth_server), data=data)
+            if req.status_code == 200:
+                creds['login'] = username
+
         return creds
 
     def authenticateCredentials(self, credentials):
