@@ -1,7 +1,7 @@
 from AccessControl.SecurityInfo import ClassSecurityInfo
 from App.class_init import default__class_init__ as InitializeClass
 from OFS.Cache import Cacheable
-from zope.interface import implements
+from zope.interface import implementer
 from zope.component import queryUtility
 
 from Products.PluggableAuthService.plugins.BasePlugin import BasePlugin
@@ -15,14 +15,12 @@ from pas.plugins.osiris5.interface import IOsirisHelper
 from mrs5.max.browser.controlpanel import IMAXUISettings
 import requests
 
-
+@implementer(IOsirisHelper, IExtractionPlugin, IAuthenticationPlugin, IRolesPlugin)
 class OsirisHelper(BasePlugin, Cacheable):
     """ Osiris PAS Plugin """
 
     meta_type = 'Osiris Helper'
     security = ClassSecurityInfo()
-
-    implements(IOsirisHelper, IExtractionPlugin, IAuthenticationPlugin, IRolesPlugin)
 
     oauth_server = 'https://oauth.upcnet.es'
 

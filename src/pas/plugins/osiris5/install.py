@@ -2,7 +2,7 @@ from AccessControl.Permissions import manage_users
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from Products.PluggableAuthService import registerMultiPlugin
 
-import plugin
+from . import plugin
 
 manage_add_osiris_form = PageTemplateFile('browser/add_plugin',
                             globals(), __name__='manage_add_osiris_form' )

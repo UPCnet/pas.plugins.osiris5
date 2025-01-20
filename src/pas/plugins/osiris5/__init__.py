@@ -1,4 +1,4 @@
-import install
+from . import install
 
 install.register_osiris_plugin()
 
